@@ -2,7 +2,7 @@
 /*
 	Plugin Name: Wordpress Spinner
 	Plugin URI: http://www.bradsinfo.com
-	Description: A wordpress plugin that dynamically rewrites article content using contradictions and conjunctions
+	Description: A wordpress plugin that dynamically rewrites article content using contractions and conjunctions
 	Version: 2.0
 	Author: Brad
 	Author URI: http://www.bradsinfo.com
@@ -24,7 +24,7 @@
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-$contradictions = array(
+$contractions = array(
 	" I'm " => " I am ",
 	" I'll " => " I will ",
 	" I'd " => " I would ",
@@ -131,7 +131,7 @@ $conjunctions = array(
 
 function wp_spinner($txt) {
 
-	global $contradictions,  $conjunctions;
+	global $contractions,  $conjunctions;
 
 	$txt = iconv(mb_detect_encoding($txt), 'ASCII//TRANSLIT//IGNORE', $txt);
 
@@ -156,7 +156,7 @@ function wp_spinner($txt) {
 		$txt = str_replace("  ", ". ", $txt);
 	}
 
-	foreach ($contradictions as $a => $r) {
+	foreach ($contractions as $a => $r) {
 		$txt = str_replace(".", " ", $txt);
 		if (!rand(0, 1)) {
 			$txt = str_replace($a, $r, $txt);

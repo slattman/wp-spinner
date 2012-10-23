@@ -1,4 +1,4 @@
 wp-spinner
 ==========
 
-A wordpress plugin that dynamically rewrites article content using contradictions and conjunctions
+A wordpress plugin that dynamically rewrites article content using contractions and conjunctions
